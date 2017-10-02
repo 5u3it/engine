@@ -133,8 +133,7 @@ void SceneBuilder::addPlatformSurface(double dx,
   if (!m_currentLayer)
     return;
 
-  std::unique_ptr<flow::PlatformSurfaceLayer> layer(
-      new flow::PlatformSurfaceLayer());
+  auto layer = std::make_unique<flow::PlatformSurfaceLayer>();
   layer->set_offset(SkPoint::Make(dx, dy));
   layer->set_size(SkSize::Make(width, height));
   layer->set_surface_id(surfaceId);
