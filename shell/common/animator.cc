@@ -145,8 +145,8 @@ void Animator::RequestDrawOnVSync() {
   }
 
   if (!pending_frame_semaphore_.TryWait()) {
-    // Multiple calls to Animator::RequestDrawOnVSync will still result in a single
-    // request to the VsyncWaiter.
+    // Multiple calls to Animator::RequestDrawOnVSync will still result in a
+    // single request to the VsyncWaiter.
     return;
   }
 
