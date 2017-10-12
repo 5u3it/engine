@@ -79,6 +79,13 @@ flow::LayerTree* GPURasterizer::GetLastLayerTree() {
   return last_layer_tree_.get();
 }
 
+void GPURasterizer::DrawLastLayerTree() {
+  if (!last_layer_tree_ || !surface_) {
+    return;
+  }
+  DrawToSurface(*last_layer_tree_);
+}
+
 flow::TextureRegistry& GPURasterizer::GetTextureRegistry() {
   return compositor_context_.texture_registry();
 }

@@ -161,10 +161,9 @@ void PlatformView::UnregisterTexture(size_t texture_id) {
 }
 
 void PlatformView::MarkTextureFrameAvailable(size_t texture_id) {
-  // TODO(mravn, sigurdm): Avoid involving Dart in this.
   blink::Threads::UI()->PostTask([engine = engine_->GetWeakPtr()] {
     if (engine)
-      engine->ScheduleFrame();
+      engine->ScheduleRedraw();
   });
 }
 

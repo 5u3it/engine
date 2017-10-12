@@ -33,6 +33,8 @@ class GPURasterizer : public Rasterizer {
 
   flow::LayerTree* GetLastLayerTree() override;
 
+  void DrawLastLayerTree() override;
+
   flow::TextureRegistry& GetTextureRegistry() override;
 
   void Draw(fxl::RefPtr<flutter::Pipeline<flow::LayerTree>> pipeline) override;

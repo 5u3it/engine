@@ -33,6 +33,10 @@ flow::LayerTree* NullRasterizer::GetLastLayerTree() {
   return nullptr;
 }
 
+void NullRasterizer::DrawLastLayerTree() {
+  // Null rasterizer. Nothing to do.
+}
+
 flow::TextureRegistry& NullRasterizer::GetTextureRegistry() {
   return texture_registry_;
 }
