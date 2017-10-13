@@ -17,7 +17,7 @@ void TextureLayer::Preroll(PrerollContext* context, const SkMatrix& matrix) {
                                     size_.height()));
 }
 
-void TextureLayer::Paint(PaintContext& context) {
+void TextureLayer::Paint(PaintContext& context) const {
   std::shared_ptr<Texture> texture =
       context.texture_registry.GetTexture(texture_id_);
   if (!texture) {

@@ -130,14 +130,8 @@ void SceneBuilder::addTexture(double dx,
                               double width,
                               double height,
                               size_t textureId) {
-  if (!m_currentLayer)
-    return;
-
-  auto layer = std::make_unique<flow::TextureLayer>();
-  layer->set_offset(SkPoint::Make(dx, dy));
-  layer->set_size(SkSize::Make(width, height));
-  layer->set_texture_id(textureId);
-  m_currentLayer->Add(std::move(layer));
+  layer_builder_->PushTexture(SkPoint::Make(dx, dy),
+                              SkSize::Make(width, height), textureId);
 }
 
 void SceneBuilder::addChildScene(double dx,
